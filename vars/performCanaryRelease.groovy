@@ -32,7 +32,7 @@ def dockerBuild(version){
     def utils = new Utils()
     def flow = new Fabric8Commands()
     def namespace = utils.getNamespace()
-    def newImageName = "${env.FABRIC8_DOCKER_REGISTRY_SERVICE_HOST}:${env.FABRIC8_DOCKER_REGISTRY_SERVICE_PORT}/${namespace}/${env.JOB_NAME}:${version}"
+    def newImageName = "192.168.2.184:5000/${namespace}/${env.JOB_NAME}:${version}"
 
     sh "docker build -t ${newImageName} ."
     if (flow.isSingleNode()) {
