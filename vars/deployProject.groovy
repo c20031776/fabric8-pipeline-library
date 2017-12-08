@@ -14,6 +14,6 @@ def call(body) {
 
   def rc = readFile config.resourceLocation
 
-  kubernetesApply(file: rc, environment: config.environment, registry: "${env.FABRIC8_DOCKER_REGISTRY_SERVICE_HOST}:${env.FABRIC8_DOCKER_REGISTRY_SERVICE_PORT}")
+  kubernetesApply(file: rc, environment: config.environment, registry: "192.168.2.184:5000")
 
 }
